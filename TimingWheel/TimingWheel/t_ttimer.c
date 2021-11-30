@@ -5,7 +5,6 @@
  * Use is subject to license terms, as specified in the LICENSE file.
  */
 
-#include <sys/queue.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -13,6 +12,7 @@
 #include <time.h>
 #include <assert.h>
 
+#include "ttqueue.h"
 #include "ttimer.h"
 
 static unsigned gotval = 0;
@@ -119,7 +119,7 @@ ttimer_random(void)
 
 	timer = ttimer_setup(maxt, &ent);
 	for (unsigned n = 0; n < 10000; n++) {
-		gotval = 0, setval = 2, steps = (random() % maxt) + 1;
+		gotval = 0, setval = 2, steps = (rand() % maxt) + 1;
 		ttimer_start(timer, &ent, steps);
 		for (unsigned i = 0; i < steps; i++) {
 			assert(gotval == 0);

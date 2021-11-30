@@ -35,8 +35,8 @@
  * Branch prediction macros.
  */
 #ifndef __predict_true
-#define	__predict_true(x)	__builtin_expect((x) != 0, 1)
-#define	__predict_false(x)	__builtin_expect((x) != 0, 0)
+#define	__predict_true(x)	(x)
+#define	__predict_false(x)	(x)
 #endif
 
 #endif

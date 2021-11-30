@@ -23,7 +23,6 @@
  * http://www.cs.columbia.edu/~nahum/w6998/papers/ton97-timing-wheels.pdf
  */
 
-#include <sys/queue.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
@@ -31,8 +30,10 @@
 #include <string.h>
 #include <time.h>
 
+#include "ttqueue.h"
 #include "ttimer.h"
 #include "utils.h"
+
 
 /*
  * Each timing wheel in the hierarchy will be of equal size: 256 slots.
